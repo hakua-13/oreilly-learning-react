@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+  <h1>再帰</h1>
+  <script>
+    const countdown = (value, fn) => {
+      fn(value);
+
+      return value > 0? countdown(value - 1, fn): value;
+    };
+
+    const res = countdown(10, (value) => console.log("value:", value));
+    console.log(res);
+    console.log('--------------');
+
+
+    const countdown2 = (value, fn, delay=1000) => {
+      fn(value);
+
+      return value>0?
+        setTimeout(() => countdown2(value - 1, fn, delay), delay):
+        value;
+    };
+    countdown2(10, (value) => console.log(value), 100);
+
+ </script> </body>
+</html>
