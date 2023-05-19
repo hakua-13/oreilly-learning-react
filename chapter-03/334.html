@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+  
+  <h1>h1</h1>
+  <script type="text/babel">
+    const invokeIf = (condition, fnTrue, fnFalse) =>
+      condition? fnTrue(): fnFalse();
+
+    const showWelcome = () => console.log('Welcome!!!');
+    const showUnauthorized = () => console.log('Unauthorized!!!!');
+    invokeIf(true, showWelcome, showUnauthorized);
+    invokeIf(false, showWelcome, showUnauthorized);
+
+    // カリー化
+    // 関数の処理をその場で実行せず関数を返却する
+    const userLogs = userName => message =>
+      console.log(`${userName} -> ${message}`);
+
+    const log = userLogs('grandpa23');
+
+    log('attempted to load 20 fake members');
+
+  </script>
+</body>
+</html>
+
+<!-- 
+高階関数
+他の関数を引数に取るか、戻り値として関数を返すか、この両方を行う関数のこと
+Array.map, Array.filter, Array.reducは関数を引数に取るため高階関数
+
+  -->
