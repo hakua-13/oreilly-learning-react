@@ -1,0 +1,15 @@
+import { useRef } from "react";
+
+export const AddColorForm = ({ onNewColor = f => f }) => {
+  const txtTitle = useRef()
+  const hexColor = useRef();
+
+  const submit = e => { ... }
+  return(
+    <form onSubmit={submit}>
+      <input ref={txtTitle}  type="text" placeholder="color title..." required/>
+      <input ref={hexColor} type='color' required/>
+      <button>ADD</button>
+    </form>
+  )
+}
