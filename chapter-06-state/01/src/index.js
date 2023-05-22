@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import Colors from './color-data.json';
+import colors from './color-data.json';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
@@ -8,7 +8,7 @@ export const ColorContext = createContext();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ColorContext.Provider value={{ Colors }}>
+    <ColorContext.Provider value={{ colors }}>
       <App />
     </ColorContext.Provider>
   </React.StrictMode>
