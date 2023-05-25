@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { useCallback } from "react";
 
 const useAnyKeyToRender = () => {
   const [, forceRender] = useState();
@@ -19,7 +20,17 @@ export default function App({children=" "}) {
   
   useEffect(() => {
     console.log('fresh render');
-  }, [words])
+  }, [words]);
+
+  const fn = useCallback(() => {
+    console.log('hello');
+    console.log('world');
+  }, []);
+
+  useEffect(() => {
+    console.log('fresh render');
+    fn();
+  },[fn]);
 
 
   return(
