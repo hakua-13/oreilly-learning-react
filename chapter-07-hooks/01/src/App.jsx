@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 const useAnyKeyToRender = () => {
   const [, forceRender] = useState();
@@ -9,17 +9,22 @@ const useAnyKeyToRender = () => {
   }, []);
 };
 
-const words = ['sick', 'powder', 'day'];
-export default function App() {
+export default function App({children=" "}) {
   useAnyKeyToRender();
+
+  const words = useMemo(() => {
+    const words = children.split(' ');
+  return words;
+  }, [children]);
   
   useEffect(() => {
     console.log('fresh render');
   }, [words])
 
-  // useEffect(() => {
-  //   console.log("fresh render");
-  // });
 
-  return <h1>Open the console</h1>;
+  return(
+    <>
+      <p>{children}</p>
+    </>
+  );
 }
