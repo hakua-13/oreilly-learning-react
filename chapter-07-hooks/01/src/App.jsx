@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useLayoutEffect } from "react";
 import { useEffectTest } from "./useEffectTest";
 import { useWindowSize } from "./useWindowSize";
+import { Numbers } from "./Numbers";
 
 export default function App({children=" "}) {
   // useEffectTest(children);
@@ -13,6 +14,7 @@ export default function App({children=" "}) {
   return(
     <div>
       <p>{children}</p>
+      <Numbers/>
     </div>
   );
 }
