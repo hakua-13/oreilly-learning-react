@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useLayoutEffect } from "react";
-import { useEffectTest } from "./useEffectTest";
-import { useWindowSize } from "./useWindowSize";
-import { Numbers } from "./Numbers";
+import { useEffectTest } from "./useEffect/useEffectTest";
+import { useWindowSize } from "./useLayoutEffect/useWindowSize";
+import { Numbers } from "./useReduse/Numbers";
 
 export default function App({children=" "}) {
   // useEffectTest(children);
