@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { useCallback } from "react";
+import React, { useState, useEffect, useMemo, useLayoutEffect } from "react";
 import { useEffectTest } from "./useEffectTest";
 
 export default function App({children=" "}) {
-  useEffectTest(children);
+  // useEffectTest(children);
 
+  useEffect(() => console.log('useEffect'));
+  useLayoutEffect(() => console.log('useLayoutEffect'));
 
   return(
     <div>
